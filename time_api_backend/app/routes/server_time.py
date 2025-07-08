@@ -5,7 +5,7 @@ from marshmallow import Schema, fields
 
 blp = Blueprint(
     "Time",
-    "time",
+    __name__,
     url_prefix="/time",
     description="Endpoint to get the current server time"
 )
