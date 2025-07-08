@@ -1,6 +1,6 @@
 import re
 import pytest
-from app import app
+from time_api_backend.app import app
 
 @pytest.fixture
 def client():
@@ -23,6 +23,5 @@ def test_time_json_format(client):
     assert isinstance(current_time, str)
     assert current_time.endswith('Z')
     # Basic ISO8601 UTC time pattern (not exhaustive)
-    iso_utc_pattern = r'^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?Z$'
+    iso_utc_pattern = r'^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$'
     assert re.match(iso_utc_pattern, current_time)
-
