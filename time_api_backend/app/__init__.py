@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_cors import CORS
 from .routes.health import blp as health_blp
-from .routes.time import blp as time_blp
+from .routes.server_time import blp as time_blp
 from flask_smorest import Api
 
 app = Flask(__name__)
